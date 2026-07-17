@@ -1,0 +1,16 @@
+
+version: 2
+
+sources:
+  - name: raw_data
+    database: CT_SHIVANGI_TEKRIWAL_DB
+    schema: DBT_STEKRIWAL
+
+    tables:
+      - name: EX_CAMPAIGN
+      - name: EX_CUSTOMER
+      - name: EX_EMPLOYEE
+      - name: EX_ORDERS
+      - name: EX_PRODUCT
+      - name: EX_STORE
+      - name: EX_SUPPLIER

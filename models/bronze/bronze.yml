@@ -1,0 +1,81 @@
+version: 2
+ 
+models:
+ 
+  - name: bronze_customer
+    description: Raw customer data loaded from EX_CUSTOMER
+    columns:
+      - name: JSON_DATA
+        tests:
+          - not_null
+ 
+      - name: LOAD_TIMESTAMP
+        tests:
+          - not_null
+ 
+  - name: bronze_employee
+    description: Raw employee data loaded from EX_EMPLOYEE
+    columns:
+      - name: JSON_DATA
+        tests:
+          - not_null
+ 
+      - name: LOAD_TIMESTAMP
+        tests:
+          - not_null
+ 
+  - name: bronze_product
+    description: Raw product data loaded from EX_PRODUCT
+    columns:
+      - name: JSON_DATA
+        tests:
+          - not_null
+ 
+      - name: LOAD_TIMESTAMP
+        tests:
+          - not_null
+ 
+  - name: bronze_orders
+    description: Raw orders data loaded from EX_ORDERS
+    columns:
+      - name: JSON_DATA
+        tests:
+          - not_null
+ 
+      - name: LOAD_TIMESTAMP
+        tests:
+          - not_null
+ 
+  - name: bronze_supplier
+    description: Raw supplier data loaded from EX_SUPPLIER
+    columns:
+      - name: JSON_DATA
+        tests:
+          - not_null
+ 
+      - name: LOAD_TIMESTAMP
+        tests:
+          - not_null
+ 
+  - name: bronze_store
+    description: Raw store data loaded from EX_STORE
+    columns:
+      - name: JSON_DATA
+        tests:
+          - not_null
+ 
+      - name: LOAD_TIMESTAMP
+        tests:
+          - not_null
+ 
+  - name: bronze_campaign
+    description: Raw campaign data loaded from EX_CAMPAIGN
+    columns:
+      - name: JSON_DATA
+        tests:
+          - not_null
+ 
+      - name: LOAD_TIMESTAMP
+        tests:
+          - not_null
+ 
