@@ -42,5 +42,9 @@ models:
       +materialized: incremental
       +schema: BRONZE
 
+    silver:
+      +materialized: table
+      +schema: SILVER
+
 
 
