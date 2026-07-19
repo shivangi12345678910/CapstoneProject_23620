@@ -25,3 +25,4 @@ FROM {{ ref('bronze_campaign') }},
 LATERAL FLATTEN(
     INPUT => JSON_DATA:campaign_data
 ) f
+
