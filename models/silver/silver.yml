@@ -1,0 +1,106 @@
+version: 2
+
+models:
+
+  - name: stg_customer
+    description: Cleaned and standardized customer data
+
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_product
+    description: Cleaned and standardized product data
+
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+
+      - name: supplier_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_supplier')
+                field: supplier_id
+
+  - name: stg_employee
+    description: Cleaned and standardized employee data
+
+    columns:
+      - name: employee_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_store
+    description: Cleaned and standardized store data
+
+    columns:
+      - name: store_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_supplier
+    description: Cleaned and standardized supplier data
+
+    columns:
+      - name: supplier_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_campaign
+    description: Cleaned and standardized campaign data
+
+    columns:
+      - name: campaign_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_orders
+    description: Cleaned and standardized orders data
+
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customer')
+                field: customer_id
+
+      - name: employee_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_employee')
+                field: employee_id
+
+      - name: store_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_store')
+                field: store_id
+
+      - name: campaign_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_campaign')
+                field: campaign_id
