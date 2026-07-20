@@ -44,12 +44,11 @@ models:
 
     silver:
       +materialized: table
-      +schema: SILVER
-
+      +schema: "{{ 'SILVER_PROD' if target.name == 'prod' else 'Silver'}}"
 
     gold:
       +materialized: table
-      +schema: GOLD
+      +schema: "{{ 'GOLD_PROD' if target.name == 'prod' else 'Gold'}}"
 
 
 
