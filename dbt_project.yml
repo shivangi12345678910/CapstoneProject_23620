@@ -41,6 +41,7 @@ models:
     bronze:
       +materialized: incremental
       +schema: BRONZE
+      +incremental_strategy: merge
 
     silver:
       +materialized: table
